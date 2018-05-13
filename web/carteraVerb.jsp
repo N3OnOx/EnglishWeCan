@@ -37,7 +37,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="altaVerbo.jsp"><i data-toggle="tooltip" title="Alta" class="glyphicon glyphicon-plus-sign"></i></a></li>
-                        <li><a href="#"><i data-toggle="tooltip" title="Baja" class="glyphicon glyphicon-minus-sign"></i></a></li>
+                        <li><a href="bajaVerbo.jsp"><i data-toggle="tooltip" title="Baja" class="glyphicon glyphicon-minus-sign"></i></a></li>
                         <li><a href="#"><i data-toggle="tooltip" title="Modificación" class="glyphicon glyphicon-pencil"></i></a></li>
                     </ul>
                 </div>
@@ -46,8 +46,8 @@
 
         <h2>Mi cartera de verbos<img src="img/english/verbs.png" id="logoverb"></h2>
         <ul class="nav navbar-nav navbar-right" id="modificaciones">
-            <li><a href="#"><i class="glyphicon glyphicon-plus-sign"></i></a></li>
-            <li><a href="#"><i class="glyphicon glyphicon-minus-sign"></i></a></li>
+            <li><a href="altaVerbo.jsp"><i class="glyphicon glyphicon-plus-sign"></i></a></li>
+            <li><a href="bajaVerbo.jsp"><i class="glyphicon glyphicon-minus-sign"></i></a></li>
             <li><a href="#"><i class="glyphicon glyphicon-pencil"></i></a></li>
         </ul>
         <table class="table table-hover">

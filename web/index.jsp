@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="routes/header.jsp"%>
 
-<body>
+<body style="width: 100%">
 <%
     BDController bdController = new BDController();
     if (bdController.getStatus() == 0){
@@ -12,7 +12,7 @@
 <div class="wrapper">
     <%@include file="routes/navbar.jsp"%>
         <!-- Page Content Holder -->
-    <div id="content">
+    <div style="width: 100%" id="content">
         <div class="imgresponsive"><img src="img/english/logo.png" id="logoresponsive"></div>
         <nav class="navbar navbar-default">
             <div class="container-fluid fixed-top">
@@ -29,27 +29,11 @@
                         </nav>
                     </span>
                 </div>
-
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><i data-toggle="tooltip" title="Alta" class="glyphicon glyphicon-plus-sign"></i></a></li>
-                        <li><a href="#"><i data-toggle="tooltip" title="Baja" class="glyphicon glyphicon-minus-sign"></i></a></li>
-                        <li><a href="#"><i data-toggle="tooltip" title="Modificación" class="glyphicon glyphicon-pencil"></i></a></li>
-                    </ul>
-                </div>
             </div>
         </nav>
 
-        <h2>Inicio</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-        <div class="line"></div>
     </div>
 </div>
-
-
-
-
 
 <!-- jQuery CDN -->
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>

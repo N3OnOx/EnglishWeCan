@@ -39,8 +39,8 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="altaVoca.jsp"><i data-toggle="tooltip" title="Alta" class="glyphicon glyphicon-plus-sign"></i></a></li>
-                        <li><a href="#"><i data-toggle="tooltip" title="Baja" class="glyphicon glyphicon-minus-sign"></i></a></li>
-                        <li><a href="#"><i data-toggle="tooltip" title="Modificación" class="glyphicon glyphicon-pencil"></i></a></li>
+                        <li><a href="bajaVoca.jsp"><i data-toggle="tooltip" title="Baja" class="glyphicon glyphicon-minus-sign"></i></a></li>
+                        <li><a href="#"><i data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" title="Modificación" class="glyphicon glyphicon-pencil"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -49,9 +49,10 @@
         <h2>Mi cartera de vocabulario<img src="img/english/vocabulary.png" id="logovoca"></h2>
         <ul class="nav navbar-nav navbar-right" id="modificaciones">
             <li><a href="altaVoca.jsp"><i class="glyphicon glyphicon-plus-sign"></i></a></li>
-            <li><a href="#"><i class="glyphicon glyphicon-minus-sign"></i></a></li>
+            <li><a href="bajaVoca.jsp"><i class="glyphicon glyphicon-minus-sign"></i></a></li>
             <li><a href="#"><i class="glyphicon glyphicon-pencil"></i></a></li>
         </ul>
+
         <table class="table table-hover">
             <thead>
             <tr class="danger">
@@ -95,28 +96,28 @@
         <p><i class="glyphicon glyphicon-minus-sign"></i> Para eliminar una palabra de su vocabulario.<br></p>
         <p><i class="glyphicon glyphicon-pencil"></i> Para editar una palabra ya existente.</p>
         <div class="line"></div>
-</div>
+    </div>
 
 
 
 
 
-<!-- jQuery CDN -->
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<!-- Bootstrap Js CDN -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
         });
-    });
-</script>
-<script>
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-</script>
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </body>
 </html>

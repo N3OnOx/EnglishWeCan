@@ -9,9 +9,11 @@
 
     <link rel="shortcut icon" href="img/english/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/english/favicon.ico" type="image/x-icon">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/index.js"></script>
+
+
 </head>

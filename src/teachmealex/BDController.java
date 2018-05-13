@@ -13,6 +13,7 @@ public class BDController {
     private PreparedStatement existeVerbo;
     private PreparedStatement existeUsuario;
     private PreparedStatement existePalabraEsp;
+    private PreparedStatement existePalabraEspanol;
 
     public BDController(){
         try {
@@ -28,7 +29,7 @@ public class BDController {
             this.existePesp = connection.prepareStatement(SQLExistePesp);
             String SQLExistePalabra = "select * from palabra where nEsp = ? or nIng = ?";
             this.existePalabra = connection.prepareStatement(SQLExistePalabra);
-            String SQLExisteVerbo = "select * from verbos where verb = ? or past = ? or present = ?";
+            String SQLExisteVerbo = "select * from verbos where verb = ? or present = ? or past = ? or pastParticipie = ?";
             this.existeVerbo = connection.prepareStatement(SQLExisteVerbo);
             String SQLExistePespDiccionario = "select * from desp where palabra = ?";
             this.existePespDiccionario = connection.prepareStatement(SQLExistePespDiccionario);
@@ -36,8 +37,10 @@ public class BDController {
             this.existePingDiccionario = connection.prepareStatement(SQLExistePingDiccionario);
             String SQLExisteUsuario = "select * from users where name = ? and password = ?";
             this.existeUsuario = connection.prepareStatement(SQLExisteUsuario);
-            String SQLExistePalabraEsp = "select palabra from desp where palabra = ?";
+            String SQLExistePalabraEsp = "select * from palabraespecial where specialIng = ? or specialEsp = ?";
             this.existePalabraEsp = connection.prepareStatement(SQLExistePalabraEsp);
+            String SQLExistePalabraEspanol = "select * from desp where palabra = ?";
+            this.existePalabraEspanol = connection.prepareStatement(SQLExistePalabraEspanol);
         }catch (SQLException e){
             System.out.println("Error: "+e.getMessage());
         }
@@ -65,16 +68,19 @@ public class BDController {
     }
     public void bajaPalabra(String palabra){
         String sql = "delete from palabra where nIng = '"+palabra+"' or nEsp = '"+palabra+"';";
+        String sql2 = "delete from palabraespecial where specialIng = '"+palabra+"' or specialEsp = '"+palabra+"';";
+
         try {
             Statement ms = connection.createStatement();
             ms.executeUpdate(sql);
+            ms.executeUpdate(sql2);
             ms.close();
         }catch (SQLException e){
             System.out.println("Error :( "+e.getMessage());
         }
     }
     public void bajaVerbo(String palabra){
-        String sql = "delete from verbos where verb = '"+palabra+"' or present = '"+palabra+"' or past = '"+palabra+"';";
+        String sql = "delete from verbos where verb = '"+palabra+"' or present = '"+palabra+"' or past = '"+palabra+"' or pastParticipie = '"+palabra+"';";
         try {
             Statement ms = connection.createStatement();
             ms.executeUpdate(sql);
@@ -135,7 +141,7 @@ public class BDController {
             Statement miStatement = this.connection.createStatement();
             ResultSet rs=miStatement.executeQuery("SELECT * FROM verbos order by verb asc");
             while(rs.next()){
-                verbos.add(new Verbo(rs.getString("verb"),rs.getString("present"),rs.getString("past"), rs.getString("pastParticipe")));
+                verbos.add(new Verbo(rs.getString("verb"),rs.getString("present"),rs.getString("past"), rs.getString("pastParticipie")));
             }
             miStatement.close();
             rs.close();
@@ -322,12 +328,28 @@ public class BDController {
         }
         return existe;
     }
+
+    public boolean existePalabraEspanol(String palabra){
+        boolean existe = true;
+        try {
+            existePalabraEspanol.setString(1,palabra);
+            ResultSet rs = existePalabraEspanol.executeQuery();
+            if (!rs.first()){
+                existe = false;
+            }
+        }catch (SQLException e){
+            System.out.println("Error: "+e.getMessage());
+        }
+        return existe;
+    }
+
     public boolean existeVerbo(String palabra){
         boolean existe = true;
         try {
             existeVerbo.setString(1,palabra);
             existeVerbo.setString(2,palabra);
-            existeVerbo.setString(3, palabra);
+            existeVerbo.setString(3,palabra);
+            existeVerbo.setString(4,palabra);
             ResultSet rs = existeVerbo.executeQuery();
             if (!rs.first()){
                 existe = false;
@@ -362,6 +384,7 @@ public class BDController {
         boolean existe = true;
         try {
             existePalabraEsp.setString(1,palabra);
+            existePalabraEsp.setString(2,palabra);
             ResultSet rs = existePalabraEsp.executeQuery();
             if (!rs.first()){
                 existe = false;

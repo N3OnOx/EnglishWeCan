@@ -32,7 +32,7 @@
                 check = false;
             }
 
-            if (!bdController.existePalabraEsp(esp)) {
+            if (!bdController.existePalabraEspanol(esp)) {
                 error = "No existe esa palabra en español";
                 display = "block";
                 check = false;
@@ -103,7 +103,7 @@
             <div class="form-group row">
                 <label for="inputEsp" class="col-sm-2 col-form-label">Español</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="esp" id="inputEsp" placeholder="Escriba la palabra en español">
+                    <input type="text" class="form-control" name="esp" id="inputEsp" placeholder="Escriba la palabra en español" autofocus>
                 </div>
             </div>
             <div class="form-group row">

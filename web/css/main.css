@@ -4,6 +4,17 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 
+.imgCabecera{
+    width: 100%;
+    max-width: 600px;
+}
+
+.tdAccion{
+    text-align: center;
+    background-color: brown;
+    color: white
+}
+
 #userButton{
     border: darkblue;
     text-align: center;
@@ -322,5 +333,21 @@ ul.CTAs a {
     }
     .breadcrumb{
         font-size: 0.895em;
+    }
+
+    .tdAccion{
+        font-size: 0.7em;
+    }
+
+    #logovoca{
+        display: none;
+    }
+
+    #eliminarPalabraOVerbo{
+        display: none;
+    }
+
+    .ocultar {
+        display: block;
     }
 }

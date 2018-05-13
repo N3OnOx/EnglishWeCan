@@ -20,7 +20,7 @@
         String pparticipie = request.getParameter("pparticipie");
 
 
-        if (!bdController.existePalabraEsp(esp)) {
+        if (!bdController.existePalabraEspanol(esp)) {
             error = "No existe ese verbo en español";
             display = "block";
             check = false;
@@ -59,7 +59,7 @@
                         <nav aria-label="breadcrumb">
                           <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.jsp">Inicio</a></li>
-                            <li class="breadcrumb-item"><a href="carteraVoc.jsp">Verbos</a></li>
+                            <li class="breadcrumb-item"><a href="carteraVerb.jsp">Verbos</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Alta</li>
                           </ol>
                         </nav>
@@ -77,7 +77,7 @@
             <div class="form-group row">
                 <label for="inputEsp" class="col-sm-2 col-form-label">Español</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="esp" id="inputEsp" placeholder="Escriba el verbo en español">
+                    <input type="text" class="form-control" name="esp" id="inputEsp" placeholder="Escriba el verbo en español" autofocus>
                 </div>
             </div>
             <div class="form-group row">
